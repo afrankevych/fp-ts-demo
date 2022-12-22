@@ -36,8 +36,8 @@ const elaborateTraditional = (id: number) => {
 
 const elaborateOption = flow(
     thingsRepository.fetch,
-    O.fromNullable,
-    O.map(thing => pipe(
+    O.fromNullable, // {_tag: "none"} | {_tag: "some, value: thing}
+    O.map(thing => pipe( // if O.isSome(thing)
         thing.value,
         decode,
         present,
