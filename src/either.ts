@@ -1,5 +1,5 @@
 import * as E from "fp-ts/Either";
-import {flow} from "fp-ts/function";
+import {flow, pipe} from "fp-ts/function";
 
 class TooHighError extends Error {
     private readonly _tag = "TooHighError";
@@ -44,3 +44,15 @@ const elaborateWithEither = flow(
 
 // console.log("with either ok: ", elaborateWithEither(2))
 // console.log("with either ko: ", elaborateWithEither(4))
+
+// Bonus: let's plug impure computeF to our pure program:
+
+const elaborateWithImpureError = (input: number) => pipe(
+    E.tryCatch(() => computeF(input), (e) => new TooHighError(`${input} is too high`)),
+    x => x,
+    E.map(decorate),
+    E.getOrElse(e => `Error: ${e.message}`)
+);
+
+// console.log("with error to either ok: ", elaborateWithImpureError(2))
+// console.log("with error to either ko: ", elaborateWithImpureError(4))
