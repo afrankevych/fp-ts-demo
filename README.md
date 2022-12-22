@@ -30,3 +30,21 @@ program(input)
 ```
 
 @see `src/pipeFlow.ts`
+
+## Billion dollar mistake fixed
+
+Considered this code
+
+```ts
+const data = fetchRemoteData(id)
+```
+
+Is it data? Is it null? Is it undefined? It's superman?
+
+It's Option!
+
+```ts
+type Option<T> = { _tag: "none" } | { _tag: "some", value: T }
+```
+
+@see `src/option.ts`
