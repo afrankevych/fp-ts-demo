@@ -95,8 +95,17 @@ type Either<T1, T2> = {_tag: "left", value: T1} | {_tag: "right", value: T2};
 
 @see `src/either.ts`
 
+## TODO 
+
+- [ ] Add Task examples
+- [ ] Add IO examples
+- [ ] Add Reader examples
+- [ ] Add Magma/Semigroup/Monoid examples
+- [ ] Add Functor/Applicative/Monad examples
+
 ## Resources
 
 - [Giulio Canti Functional Programming workshop material](https://github.com/gcanti/functional-programming)
 - [fp-ts library](https://github.com/gcanti/fp-ts)
+- [Giulio Canti blog with fp/ts/fp-ts guides](https://dev.to/gcanti)
 - [Mostly adequate guide to FP (in javascript)](https://github.com/MostlyAdequate/mostly-adequate-guide)
