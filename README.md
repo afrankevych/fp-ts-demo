@@ -94,3 +94,9 @@ type Either<T1, T2> = {_tag: "left", value: T1} | {_tag: "right", value: T2};
 ```
 
 @see `src/either.ts`
+
+## Resources
+
+- [Giulio Canti Functional Programming workshop material](https://github.com/gcanti/functional-programming)
+- [fp-ts library](https://github.com/gcanti/fp-ts)
+- [Mostly adequate guide to FP (in javascript)](https://github.com/MostlyAdequate/mostly-adequate-guide)
