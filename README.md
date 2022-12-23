@@ -109,3 +109,4 @@ type Either<T1, T2> = {_tag: "left", value: T1} | {_tag: "right", value: T2};
 - [fp-ts library](https://github.com/gcanti/fp-ts)
 - [Giulio Canti blog with fp/ts/fp-ts guides](https://dev.to/gcanti)
 - [Mostly adequate guide to FP (in javascript)](https://github.com/MostlyAdequate/mostly-adequate-guide)
+- [Domain Modeling Made Functional](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
