@@ -46,7 +46,6 @@ const elaborateWithEither = flow(
 // console.log("with either ko: ", elaborateWithEither(4))
 
 // Bonus: let's plug impure computeF to our pure program:
-
 const elaborateWithImpureError = (input: number) => pipe(
     E.tryCatch(
         () => computeF(input),
