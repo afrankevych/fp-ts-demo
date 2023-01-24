@@ -48,8 +48,9 @@ const elaborateWithEither = flow(
 // Bonus: let's plug impure computeF to our pure program:
 
 const elaborateWithImpureError = (input: number) => pipe(
-    E.tryCatch(() => computeF(input), (e) => new TooHighError(`${input} is too high`)),
-    x => x,
+    E.tryCatch(
+        () => computeF(input),
+        (e) => new TooHighError(`${input} is too high`)),
     E.map(decorate),
     E.getOrElse(e => `Error: ${e.message}`)
 );
